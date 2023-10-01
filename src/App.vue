@@ -1,15 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <button @click="goToBoard">board</button> <button @click="goToAddSong">add song</button>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  methods: {
+    goToBoard() {
+      this.$router.push("/board")
+    },
+    goToAddSong() {
+      this.$router.push("/addsong")
+    }
   }
 }
 </script>
